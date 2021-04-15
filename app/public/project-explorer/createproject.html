@@ -4,58 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\Kinsley\edconnect-weekly\app\public\project-explorer\css\bootstrap.min.css">
     <title>exercise</title>
 </head>
 <body>
     <header>
-        <h1>Project Explorer</h1>
-        <h2>
-            One Stop Database for Acedemic Projects
-        </h2>
+        <nav class="navbar navbar-light bg-primary">
+            <h1 class="navbar-brand mb-0 h1 text-light ">Project Explorer</h1>
 
+            <form class="form-inline col-md-9">
+                <input class="form-control mr-sm-2"  name="searchForm" type="search" placeholder="Search Projects" aria-label="Search">
+                <button type="button" class="btn btn-outline-light">Search</button>
+                <button class="btn my-2 my-sm-0 text-light " type="submit">Submit</button>
+            </form>
+            
+            <div>
+                <a class="navbar-brand text-light " href="search.html">Sign up</a>
+                <a class="navbar-brand text-light" href="login.html">Login</a>
+            </div>
+            
+        </nav>       
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="search.html">Projects</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-  
-
-    </nav>
-    <main>
-        <h2>Submit Project</h2>
-        <form name="submitProject">
-
-            <div>
-                <label for="name">Project Name:<br><input type="text" name="name"/>
-                </label>
     
-            </div><br>
-
-            <div>
-                <label for="abstract">Project Abstract:<br><textarea type="text" name="abstract"></textarea>
-                </label>
-    
-            </div><br>
-
-            <div>
-                <label for="authors">Authors:<br><input type="text" name="authors"/>
-                </label>
-    
-            </div><br>
-
-            <div>
-                <label for="tag">Tag(s):<br><input type="text" name="tags"/>
-                </label>
-    
-            </div><br>
-
-            <div>
-                <input type="submit" />
-    
+    <div class=" mx-auto w-75 p-3">
+        <form class=" mx-auto w-75 p-3">
+            <h4>Submit Project</h4>
+            <div class="form-group">
+                <label class="form-label" for="exampleFormControlInput1">Project Name</label>
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter project name">
+            </div>
+              
+            
+            <div class="form-group">
+                <label class="form-label"  for="exampleFormControlTextarea1">Project abstract</label>
+                <textarea  name="abstract" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
 
+            <div class="form-group">
+                <label class="form-label"  for="exampleFormControlInput1">Author(s)</label>
+                <input type="text" name="authors" class="form-control" id="exampleFormControlInput1" placeholder="Enter author names(separated by comma)">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label"  for="exampleFormControlInput1">Tag(s)</label>
+                <input type="text" name="tags" class="form-control" id="exampleFormControlInput1" placeholder="use # to tag projects with different topics(e.g #javascript mongodb)">
+            </div>
+            <button type="submit" class="btn btn-primary">Continue</button>
+
         </form>
-    </main>
+
+    </div>
+
+    <footer class=" mx-auto w-75 p-3"> <!--to let it to be in the middle(centered)-->
+        <p class="col-md-12 btn btn-light text-right"><span class="text-secondary">Project Explorer &#169; 2020.</span>Edconnect</p>
+    </footer>
 </body>
 </html>
