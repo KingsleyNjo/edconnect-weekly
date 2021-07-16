@@ -8,121 +8,134 @@
     <title>exercise</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-primary">
-            <h1 class="navbar-brand mb-0 h1 text-light ">Project Explorer</h1>
-
-            <form class="form-inline col-md-9">
-                <input class="form-control mr-sm-2"  name="searchForm" type="search" placeholder="Search Projects" aria-label="Search">
-                <button type="button" class="btn btn-outline-light">Search</button>
-                <button class="btn my-2 my-sm-0 text-light " type="submit">Submit</button>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Project Explorer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#content" aria-controls="content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="content">
+            <form class="form-inline" name="searchForm">
+                <input class="form-control" type="text" value="Search Projects">
+                <button class="btn btn-primary btn-outline-light" type="button" value="Search" placeholder="search">Search</button>
+                <input class="btn btn-primary" type="submit" value="Submit">
             </form>
-            
-            <div>
-                <a class="navbar-brand text-light " href="search.html">Sign up</a>
-                <a class="navbar-brand text-light" href="login.html">Login</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="signup" href="register.html">Signup</a>
+                    <a class="nav-link" style="display: none;" id="logout" href="index.html">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="login" href="login.html">Login</a>
+                    <span class="navbar-text" id="username" style="display: none;" href="index.html">Hi</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <main class="container">
+        <section  class="container">
+            <div class="row">
+                <h2>Ade Chuks <span class="text-muted">ade@edconnect.ng</span></h2>
             </div>
-        </nav>    
-        
-    </header>
+            <br>
+            <div class="row">
+                <div class="col-md-4">Program<br> Computer Science</div>
+                <div class="col-md-4">Matriculation number<br> 00/0000</div>
+                <div class="col-md-4">Graduation Year<br> 2019</div>
+            </div>                 
+        </section>
+        <br>
+        <section>
+            <h4>Update Profile</h4>
+            <br>
+            <div class="w-75 mx-auto">
+                <form class="form-group" name="updateProfile">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="form-label">First Name</label>
+                            <input class="form-control" type="text" name="firstName" value="First name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Last Name</label>
+                            <input class="form-control" type="text" name="lastName" value="Last name">                    
+                        </div>
+                    </div>    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Email Address</label>
+                            <input class="form-control" type="email" name="email" value="Your Email address">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Program</label>
+                            <select class="form-control" name="program" placeholder="Choose...">
+                                <option value="Choose..." disabled selected>Choose...</option>
+                                <option value="computer_science">Computer Science</option>
+                                <option value="computer_information_systems">Computer Information Systems</option>
+                                <option value="computer_technology">Computer Technology</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Matriculation number</label> 
+                            <input class="form-control" type="text" name="matricNumber" value="e.g. 140403012">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Graduation year</label>
+                            <select class="form-control" name="graduationYear">
+                                <option value="Choose..." disabled selected>Choose...</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="button">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-    <div class="container my-4"> <!-- my-4 is for margin left and right in 4-->
-        <h5>Ade Chuks<span class="text-secondary">ade@edconnect.ng</span></h5>
+        <section>
+            <h4>Change Password</h4>
+            <br>
+            <div class="w-75 mx-auto">
+                <form class="form-group" name="changePassword">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label class="form-label">Current Password</label>
+                            <input class="form-control" type="password" name="currentPassword" placeholder="Current password">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="form-label">New Password</label> 
+                            <input class="form-control" type="password" name="newPassword" placeholder="Your new password">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="form-label">Confirm Password</label> 
+                            <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm new password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="button">Change Password</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
 
-        <div class="row bg-light">
-            <div class="col-md-3">Program<br>Computer Information Systems</div>
-            <div class="col-md-6">Matriculation number<br>33/3333</div>
-            <div class="col-md-3">Graduation year<br>2018</div>
+    <br>
+    <footer class="container">
+        <div class="row justify-content-end">
+            <p class="text-muted">Project Explorer &copy; 2020 -<strong>Edconnect</strong></p>
         </div>
-
-        <div class="my-4">
-            <h6>Update Profile</h6>
-            <hr style="height:2px; width:100%; border-width:0; color:rgb(230, 230, 230); background-color:rgb(230, 230, 230)">
-        </div>
-
-        <div>
-            <form class=" mx-auto w-75 p-3">
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label class="form-label" for="inputEmail4">First Name</label>
-                    <input type="text" name="firstName" class="form-control" id="inputEmail4">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label class="form-label"  for="inputPassword4">Last Name</label>
-                    <input type="text" name="lastName" class="form-control" id="inputPassword4">
-                  </div>
-                </div>
-        
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label class="form-label"  for="inputEmail4">Email Address</label>
-                      <input type="email" name="email" class="form-control" id="inputEmail4">
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label class="form-label"  for="inputEmail4">Program</label>
-                        <select name="program" id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>        
-                    </div>
-                    
-                </div>
-        
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label class="form-label"  for="inputPassword4">Matriculation Number</label>
-                      <input type="text" name="matricNumber" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="form-label"  for="inputEmail4">Graduation year</label>
-                        <select name="graduationYear" id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>  
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Update Profile</button>
-            </form>
-        </div>
-
-        <div class="my-4">
-            <h6>Change Password</h6>
-            <hr style="height:2px; width:100%; border-width:0; color:rgb(230, 230, 230); background-color:rgb(230, 230, 230)">
-        </div>
-
-        <div>
-            <form class=" mx-auto w-75 p-3">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <label class="form-label"  for="inputEmail4">Current Password</label>
-                      <input type="password" name="currentPassword" class="form-control" id="inputEmail4" placeholder="Current Password">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label class="form-label"  for="inputPassword4"> New Password</label>
-                      <input type="password" name="newPassword" class="form-control" id="inputPassword4" placeholder="Your new Password">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="form-label"  for="inputPassword4">Confirm Password</label>
-                        <input type="password" name="confirmPassword" class="form-control" id="inputPassword4" placeholder="Confirm new Password">
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Change Password</button>
-
-            </form>
-
-            
-        </div>
-
-    </div>
-    
-    
-    <footer class=" mx-auto w-75 p-3"> <!--to let it to be in the middle(centered)-->
-        <p class="col-md-12 btn btn-light text-right"><span class="text-secondary">Project Explorer &#169; 2020.</span>Edconnect</p>
-        <!-- the bg-light is to give the container a grey background-->
     </footer>
-    <script src="js/app.js"></script>
+<script src = "js/app.js"></script>
 </body>
 </html>
