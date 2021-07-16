@@ -2,62 +2,58 @@ const DataModel = require('./data_model');
 
 class User {
     constructor(id, firstname, lastname, email, password, matricNumber, program, graduationYear) {
-        this.id=id;
-        this.firstname=firstname;
-        this.lastname=lastname;
-        this.email=email;
-        this.password=password;
-        this.matricNumber=matricNumber;
-        this.program=program;
-        this.graduationYear=graduationYear;
-
+           this.id = id;
+           this.firstname = firstname;
+           this.lastname = lastname;
+           this.email = email;
+           this.password = password;
+           this.matricNumber = matricNumber;
+           this.program = program;
+           this.graduationYear = graduationYear;
     }
 
     getFullName() {
-        let fullname = (`${this.firstname} ${this.lastname}`);
-        return fullname;
-
-
+         return `${this.firstname} ${this.lastname}`
     }
 }
 
 class Users extends DataModel {
     authenticate(email, password) {
-        let authenticatedUser = this.data.find(e => e.email === email && e.password === password);
-        return (authenticatedUser ? true:false);
-
-
+    let validUser = this.data.find((element) => element.email === email && element.password === password)
+      return (validUser? true : false); 
     }
 
     getByEmail(email) {
-        let getEmail= this.data.find(e => e.email === email);
-        return getEmail ? getEmail:null;
-
-
+    let getEmail = this.data.find(ele => ele.email === email)
+    return getEmail? getEmail : null;
     }
 
     getByMatricNumber(matricNumber) {
-        let getMatric = this.data.find(e => e.matricNumber === matricNumber)
-        return getMatric ? getMatric:null;
-
+        let element = this.data.find(ele => ele.matricNumber === matricNumber)
+        return element? element : null;
     }
 
     validate(obj) {
-        let value = true;
-        for(let prop in obj){
-            if(obj[prop]===null){
-                value=false;
+        this.errors = [];
+        for (const property in obj) {
+            if(obj[property] === ""){
+                this.errors.push(`${property} should not be empty`);
             }
         }
-
-        let validEmail = this.data.find(e => e.email === obj.email);
-        let validMatric = this.data.find(e => e.matricNumber === obj.matricNumber);
-        let validPassword = obj.password.length>=7;
-        return value && validPassword && !validEmail && !validMatric;
-
-
+        if (this.getByEmail(obj.email)){
+            this.errors.push(`A user with specified email address already exists`);
+        }
+        if (this.getByMatricNumber(obj.matricNumber)){
+            this.errors.push(`A user with specified matric number already exists`);
+        }
+        if(obj.password.length < 7){
+            this.errors.push("Password should have at least 7 characters");
+        }
+        return (this.errors.length > 0) ? false : true;
     }
-}
+      
+    }
+
 
 // Do not worry about the below for now; It is included so that we can test your code
 // We will cover module exports in later parts of this course
