@@ -8,28 +8,27 @@
     <title>exercise</title>
 </head>
 <body>
-    <nav id = 'headerNav' class="navbar navbar-expand-md navbar-dark bg-primary">
-        <div class="container">
-            <div class="navbar-header" >
-                <a class="navbar-brand" href="index.html">Project Explorer</a>
-            </div>
-            <form class="navbar navbar-left form-inline my-2 my-lg-0" name="searchForm">
-                <input class="navbar navbar-left form-control mr-sm-2" placeholder="Search Projects"/>
-                <input type="submit" class="btn btn-outline-light my-2 my-sm-0" value="Search">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Project Explorer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#content" aria-controls="content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="content">
+            <form class="form-inline" name="searchForm">
+                <input class="form-control" type="text" value="Search Projects">
+                <button class="btn btn-primary btn-outline-light" type="button" value="Search" placeholder="search">Search</button>
+                <input class="btn btn-primary" type="submit" value="Submit">
             </form>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a class = 'nav-link' href='viewproject.html'>Projects</a></li>
-                    <li><a class="nav-link" href="createproject.html">Submit</a></li>
-                </ul>
-            </div>
-            <ul id = 'userStatus' class="nav navbar-nav navbar-right">
-                <li><a class="nav-link" href="register.html">Sign up</a></li>
-       
-                <li><a class="nav-link" href="login.html">Login</a></li>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="signup" href="register.html">Signup</a>
+                    <a class="nav-link" style="display: none;" id="logout" href="index.html">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="login" href="login.html">Login</a>
+                    <span class="navbar-text" id="username" style="display: none;" href="index.html">Hi</span>
+                </li>
             </ul>
-
         </div>
     </nav>
 
