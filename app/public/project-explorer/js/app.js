@@ -18,7 +18,7 @@ window.onload = function(){
 }
 
 let register = function () { 
-        document.getElementById('inputState');
+        document.getElementById('inputprogram');
         fetch('/api/programs', {
             method: 'GET',
             header: {
@@ -30,10 +30,10 @@ let register = function () {
                 for (let i = 0; i < response.length; i++) {
                     let programList = document.createElement('option');
                     programList.innerHTML = response[i];
-                    document.getElementById('inputState').appendChild(programList);
+                    document.getElementById('inputprogram').appendChild(programList);
                 }
             })
-        let inputYear = document.getElementById('Year');
+        let inputYear = document.getElementById('inputgraduationyear');
         fetch('/api/graduationYears', {
             method: 'GET',
             header: {
@@ -104,9 +104,11 @@ let register = function () {
 let index = async function(){
     
         let logOutEl = document.createElement("a");
+        //On the page load, you want to check if  there’s a value for the uid cookie, and if so make a GET request
+        //yes there is a value for the uid cookie which is 55llsqbs for the index.html page load
         let check = document.cookie.split("=");
         if (check[0] === "uid" && check[1]) {
-            let response =  await fetch(`/api/users/${check[1]}`);
+            let response =  await fetch(`/api/users/${check[1]}`); //replace uid with the actual value i.e replace /api/users/{uid} to /api/users/${check[1]}
             let result =  await response.json()
             console.log(result);
             let greetEl = document.createElement("span");
@@ -146,7 +148,7 @@ if (window.location.href.includes('index.html')){
                   let projectTitle = document.createElement('h5');
                   let projectTitleLink = document.createElement("a");
                   projectTitle.append(projectTitleLink);
-                  projectTitleLink.href = `viewproject.html?id=${response[i].id}`;
+                  projectTitleLink.href = `viewproject.html?id=${response[i].id}`; //take note of this line 151
                   projectTitleLink.className = "card-title text-primary";
                   projectTitleLink.textContent = response[i].name;
                   let projectAuthor = document.createElement('h6');
