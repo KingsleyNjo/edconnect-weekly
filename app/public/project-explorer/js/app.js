@@ -268,8 +268,9 @@ if (window.location.href.includes('index.html')){
                alertDiv.classList = "alert alert-danger" // add css classes
                alertDiv.style.display = "block"
              
-          }           
-          })
+            }
+
+            })
             }
           }
         }
