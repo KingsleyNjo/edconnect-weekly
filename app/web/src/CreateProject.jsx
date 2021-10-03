@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Layout from './shared/Layout';
+import {axiosInstance} from "./config";
 import { useHistory } from 'react-router-dom';
 
 
@@ -70,7 +71,7 @@ const CreateProject = () => {
 
             let sendProjectData = async function (url, userData) {
 
-                let response = await fetch(url, {
+                let response = await axiosInstance(url, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',

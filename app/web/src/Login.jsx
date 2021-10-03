@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Layout from './shared/Layout';
+import {axiosInstance} from "./config";
 import { Form, Button } from 'react-bootstrap';
 
 const Login = () => {
@@ -31,7 +32,7 @@ const Login = () => {
 
         let loginUser = async function (url, userData) {
 
-            let response = await fetch(url, {
+            let response = await axiosInstance(url, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',

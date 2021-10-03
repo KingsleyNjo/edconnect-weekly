@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Layout from './shared/Layout';
+import {axiosInstance} from "./config";
 import { Form, Button, Col } from 'react-bootstrap';
 
 let asyncHandler = async function (url) {
 
-    let response = await fetch(url);
+    let response = await axiosInstance(url);
     if (response.status !== 200) {
         throw new Error("something went wrong!!!");
     }
@@ -77,7 +78,7 @@ const Signup = (props) => {
         console.log(e);
         let registerUser = async function (url, userData) {
 
-            let response = await fetch(url, {
+            let response = await axiosInstance(url, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
