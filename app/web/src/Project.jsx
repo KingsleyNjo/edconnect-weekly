@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './shared/Layout';
-import {axiosInstance} from "./config";
 import { useParams, useHistory } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
@@ -20,7 +19,7 @@ const Project = (props) => {
 
         let asyncHandler = async function (url) {
 
-            let response = await axiosInstance(url);
+            let response = await fetch(url);
             if (response.status !== 200) {
                 throw new Error("something went wrong!!!");
             }

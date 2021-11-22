@@ -1,11 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
-import {axiosInstance} from "./config";
 import Layout from './shared/Layout';
 
 let asyncHandler = async function (url) {
 
-    let response = await axiosInstance(url);
+    let response = await fetch(url);
     if (response.status !== 200) {
         throw new Error("something went wrong!!!");
     }

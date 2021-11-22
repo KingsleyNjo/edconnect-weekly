@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import {axiosInstance} from "../config";
 
 
 let asyncHandler = async function (url) {
 
-    let response = await axiosInstance(url);
+    let response = await fetch(url);
     if (response.status !== 200) {
         throw new Error("something went wrong!!!");
     }
