@@ -5,10 +5,10 @@ import Footer from './Footer';
 const Layout = (props) => {
     return(
         <>
-            <Header username={props.username}/>
+            <Header us={props.us}/>
 
                 <main className="mx-auto">
-                    {props.children}  {/* we call an inheritance here for everywhere Layout component will be used */}
+                    {props.children}
                 </main>
 
             <Footer/>
